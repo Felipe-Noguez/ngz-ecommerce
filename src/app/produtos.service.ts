@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {IProduto, produtos} from "./produtos";
 
 @Injectable({
@@ -6,6 +6,7 @@ import {IProduto, produtos} from "./produtos";
 })
 export class ProdutosService {
   produtos: IProduto[] = produtos;
+
   constructor() { }
 
   getAll() {
@@ -13,8 +14,6 @@ export class ProdutosService {
   }
 
   getById(idProduto: number) {
-    // let find = this.produtos.find(produto => produto.id = idProduto);
-    // console.log(find)
-    return this.produtos.find(produto => produto.id = idProduto);
+    return this.produtos.find(produto => produto.id === idProduto);
   }
 }
